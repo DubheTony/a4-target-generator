@@ -1,0 +1,4 @@
+# 文本一律按 LF 存进仓库，避免 Windows / Linux 之间换行符打架
+* text=auto
+*.png binary
+*.pdf binary

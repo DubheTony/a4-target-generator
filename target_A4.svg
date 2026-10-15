@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210.0mm" height="297.0mm" viewBox="0 0 210.0 297.0">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="5.0" y="5.0" width="200.0" height="287.0" fill="none" stroke="#000" stroke-width="0.8"/>
+<path d="M 10.00,139.00 L 67.00,81.50 L 70.00,10.00 Q 105.00,4.00 140.00,10.00 L 143.00,81.50 L 200.00,139.00 L 200.00,288.00 L 10.00,288.00 Z" fill="none" stroke="#000" stroke-width="1.2" stroke-linejoin="miter"/>
+<defs><clipPath id="body"><path d="M 10.00,139.00 L 67.00,81.50 L 70.00,10.00 Q 105.00,4.00 140.00,10.00 L 143.00,81.50 L 200.00,139.00 L 200.00,288.00 L 10.00,288.00 Z"/></clipPath></defs>
+<g clip-path="url(#body)">
+<path d="M 128.75,144.19 L 128.75,179.81 A 23.75,15.68 0 0 1 81.25,179.81 L 81.25,144.19 A 23.75,15.68 0 0 1 128.75,144.19 Z" fill="none" stroke="#000" stroke-width="0.4"/>
+<path d="M 152.50,126.38 L 152.50,197.62 A 47.50,31.35 0 0 1 57.50,197.62 L 57.50,126.38 A 47.50,31.35 0 0 1 152.50,126.38 Z" fill="none" stroke="#000" stroke-width="0.4"/>
+<path d="M 176.25,108.56 L 176.25,215.44 A 71.25,47.03 0 0 1 33.75,215.44 L 33.75,108.56 A 71.25,47.03 0 0 1 176.25,108.56 Z" fill="none" stroke="#000" stroke-width="0.4"/>
+<path d="M 200.00,90.75 L 200.00,233.25 A 95.00,62.70 0 0 1 10.00,233.25 L 10.00,90.75 A 95.00,62.70 0 0 1 200.00,90.75 Z" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="69.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
+<text x="105.00" y="113.39" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
+<text x="140.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
+<text x="105.00" y="213.85" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
+<text x="45.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
+<text x="105.00" y="79.90" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
+<text x="164.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
+<text x="105.00" y="247.34" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
+<text x="21.88" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
+<text x="105.00" y="46.41" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
+<text x="188.12" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
+<text x="105.00" y="280.83" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
+<text x="105.00" y="167.40" font-weight="bold" font-family="Arial, Helvetica, sans-serif" font-size="15.0" text-anchor="middle" fill="#000">10</text>
+<text x="105.00" y="19.02" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
+<text x="25.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
+<text x="185.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
+</g>
+<text x="36.0" y="48" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="11.0" font-weight="bold" text-anchor="middle" fill="#000" letter-spacing="2">胸环靶</text>
+<rect x="150.0" y="8.0" width="52.0" height="78.0" fill="none" stroke="#000" stroke-width="0.6"/>
+<text x="153.0" y="19.00" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">日期：</text>
+<line x1="164.00" y1="20.20" x2="199.00" y2="20.20" stroke="#000" stroke-width="0.3"/>
+<text x="153.0" y="27.00" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">时间：</text>
+<line x1="164.00" y1="28.20" x2="199.00" y2="28.20" stroke="#000" stroke-width="0.3"/>
+<text x="153.0" y="35.00" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">姓名：</text>
+<line x1="164.00" y1="36.20" x2="199.00" y2="36.20" stroke="#000" stroke-width="0.3"/>
+<text x="153.0" y="43.00" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">组别：</text>
+<line x1="164.00" y1="44.20" x2="199.00" y2="44.20" stroke="#000" stroke-width="0.3"/>
+<text x="153.0" y="51.00" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">靶位：</text>
+<line x1="164.00" y1="52.20" x2="199.00" y2="52.20" stroke="#000" stroke-width="0.3"/>
+<line x1="153.0" y1="56.00" x2="199.0" y2="56.00" stroke="#000" stroke-width="0.25"/>
+<line x1="153.0" y1="64.00" x2="199.0" y2="64.00" stroke="#000" stroke-width="0.25"/>
+<line x1="153.0" y1="72.00" x2="199.0" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="153.00" y1="56.00" x2="153.00" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="162.20" y1="56.00" x2="162.20" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="171.40" y1="56.00" x2="171.40" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="180.60" y1="56.00" x2="180.60" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="189.80" y1="56.00" x2="189.80" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<line x1="199.00" y1="56.00" x2="199.00" y2="72.00" stroke="#000" stroke-width="0.25"/>
+<text x="154.20" y="59.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">1</text>
+<text x="163.40" y="59.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">2</text>
+<text x="172.60" y="59.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">3</text>
+<text x="181.80" y="59.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">4</text>
+<text x="191.00" y="59.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">5</text>
+<text x="154.20" y="67.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">6</text>
+<text x="163.40" y="67.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">7</text>
+<text x="172.60" y="67.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">8</text>
+<text x="181.80" y="67.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">9</text>
+<text x="191.00" y="67.00" font-family="Arial, Helvetica, sans-serif" font-size="2.4" fill="#000">10</text>
+<text x="153.0" y="78.50" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="4.0" fill="#000">合计</text>
+<line x1="164.00" y1="79.70" x2="199.00" y2="79.70" stroke="#000" stroke-width="0.3"/>
+</svg>
