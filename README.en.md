@@ -55,6 +55,8 @@ The ring layout follows the standard chest-ring target. Ring lines are equally s
 
 `CAP_R = 0.66` (cap half-height over half-width) and `SIDE_K = 1.50` (straight side length over half-width) in the parameters block control that shape, if you want fatter caps or longer sides.
 
+The head outline and shoulder angle came off the same reference: the top of the head is a wide, shallow arc that only reaches the straight sides at a half-width of 37.3mm, the sides flare out to 42.8mm at their widest and taper back in to 40.2mm at the base, and the shoulder line sits at 28° to horizontal. Those live in the `HEAD_*` group and `SHOULDER_DEG`. Change the shoulder angle and the vertical side edge moves with it, which pushes the box down into the shoulder line, so `BOX` has to move too.
+
 The box in the upper right combines the information fields and the scoresheet: five blank lines plus a 2×5 grid. The field names live in `BOX_FIELDS`; the box itself is `BOX`. Adding a field pushes the grid down into the shoulder line.
 
 ## Files
