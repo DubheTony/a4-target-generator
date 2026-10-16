@@ -20,8 +20,14 @@
   * 比它大的环没地方画，所以最外一档只在头部和底角成带——这就是标准靶的排法；
   * 环号排成十字：水平中线一排、竖直中线一排，都左右/上下对称。
 
+头型和肩角照参考靶实测：
+  * 头顶是一条**很宽的浅弧**（一直张到半宽 37mm 才收直边），不是窄圆顶；
+  * 头两侧先外扩到最宽 42.8mm，再往里收到 40.2mm 的底角，所以头根上有个很轻的收腰；
+  * 肩线与水平线成 28°（比"从底角直接斜到竖边"的 45° 平得多），竖边因此起得更高。
+
 输出 SVG；PDF 由 export_pdf.py 用 Chromium 出，A4 实际尺寸 1:1。
 """
+from math import radians, tan
 from pathlib import Path
 
 # ───────────────────────── 参数区 ─────────────────────────
@@ -33,7 +39,6 @@ FRAME = 5.0                             # 外框距纸边
 
 CX = 105.0                              # 中轴
 BODY_HW = 95.0                          # 靶面半宽 → 靶面宽 190（A4 能放的极限）
-BODY_TOP = 10.0                         # 头顶
 BODY_BOT = 288.0                        # 靶面平底
 CY = 162.0                              # 环心高度
 
@@ -42,11 +47,16 @@ CAP_R = 0.66                            # 圆头半高 / 半宽（参考图实�
 SIDE_K = 1.50                           # 直边长 / 半宽（参考图实测）
 RATIO_H = CAP_R + SIDE_K / 2            # 竖半高 / 半宽 = 1.41
 
-HEAD_HW = 38.0                          # 头部底角半宽
-HEAD_TOP_HW = 35.0                      # 头部顶边半宽
-HEAD_H = 71.5                           # 头部高
-HEAD_BULGE = 6.0                        # 头顶圆弧凸出量
-SHOULDER_Y = 139.0                      # 肩线外端（接竖边处）高度
+# 头部（照参考靶实测的比例）
+HEAD_TOP_Y = 7.0                        # 头顶最高点
+HEAD_H = 70.0                           # 头部高：最高点 → 头部底角
+HEAD_HW = 42.8                          # 头部最宽处半宽
+HEAD_BASE_HW = 40.2                     # 头部底角半宽（比最宽处往里收）
+HEAD_WIDE_R = 0.68                      # 最宽处落在头部高度的几成处（0=顶，1=底）
+HEAD_ARC_HW = 37.3                      # 顶部圆弧两端的半宽
+HEAD_ARC_H = 11.3                       # 顶部圆弧的竖向高度
+
+SHOULDER_DEG = 28.0                     # 肩线与水平线的夹角；越小肩越平（参考靶约 28°）
 
 W_SIL = 1.2                             # 靶面轮廓线宽
 W_RING = 0.4                            # 环线线宽
@@ -60,7 +70,7 @@ FS_RINGNO = 4.5                         # 环号
 FS_TITLE = 11.0                         # 标题「胸环靶」
 FS_LABEL = 4.0                          # 字段名
 
-BOX = (150.0, 8.0, 52.0, 78.0)          # 记分/信息合一框 x,y,w,h
+BOX = (152.0, 7.0, 50.0, 71.5)          # 记分/信息合一框 x,y,w,h（框底不能压到肩线）
 BOX_FIELDS = ["日期", "时间", "姓名", "组别", "靶位"]
 BOX_COLS = 5                            # 记分格横向格数
 
@@ -68,7 +78,12 @@ FONT_CN = "Microsoft YaHei, SimHei, sans-serif"
 FONT_NUM = "Arial, Helvetica, sans-serif"
 # ─────────────────────────────────────────────────────────
 
-HEAD_BASE_Y = BODY_TOP + HEAD_H
+HEAD_BASE_Y = HEAD_TOP_Y + HEAD_H               # 头部底角高度
+HEAD_WIDE_Y = HEAD_TOP_Y + HEAD_WIDE_R * HEAD_H # 头部最宽处高度
+HEAD_ARC_Y = HEAD_TOP_Y + HEAD_ARC_H            # 顶部圆弧两端的高度
+# 肩线从头部底角斜到靶面竖边；夹角一定，竖边起点（SHOULDER_Y）就跟着定
+SHOULDER_Y = HEAD_BASE_Y + (BODY_HW - HEAD_BASE_HW) * tan(radians(SHOULDER_DEG))
+
 V_OUT = TOP_VALUE - (N_RINGS - 1)       # 最外一档的分值
 
 
@@ -99,13 +114,18 @@ def ring_path(a, c, h):
 
 
 def silhouette_path():
-    lx, rx = CX - HEAD_HW, CX + HEAD_HW
-    ltx, rtx = CX - HEAD_TOP_HW, CX + HEAD_TOP_HW
+    """靶面轮廓，一路画下来：
+    左肩 → 头部底角 → 头最宽处 → 顶部圆弧外端 → 圆弧过顶 → 右边镜像 → 平底。"""
+    # 顶部圆弧用二次贝塞尔。控制点放在最高点上方 HEAD_ARC_H 处，
+    # 这样曲线中点（= 控制点与两端点的平均）正好落在 HEAD_TOP_Y，弧顶高度就是设定的。
+    arc_ctrl_y = HEAD_TOP_Y - HEAD_ARC_H
     return (f"M {CX - BODY_HW:.2f},{SHOULDER_Y:.2f} "
-            f"L {lx:.2f},{HEAD_BASE_Y:.2f} "
-            f"L {ltx:.2f},{BODY_TOP:.2f} "
-            f"Q {CX:.2f},{BODY_TOP - HEAD_BULGE:.2f} {rtx:.2f},{BODY_TOP:.2f} "
-            f"L {rx:.2f},{HEAD_BASE_Y:.2f} "
+            f"L {CX - HEAD_BASE_HW:.2f},{HEAD_BASE_Y:.2f} "
+            f"L {CX - HEAD_HW:.2f},{HEAD_WIDE_Y:.2f} "
+            f"L {CX - HEAD_ARC_HW:.2f},{HEAD_ARC_Y:.2f} "
+            f"Q {CX:.2f},{arc_ctrl_y:.2f} {CX + HEAD_ARC_HW:.2f},{HEAD_ARC_Y:.2f} "
+            f"L {CX + HEAD_HW:.2f},{HEAD_WIDE_Y:.2f} "
+            f"L {CX + HEAD_BASE_HW:.2f},{HEAD_BASE_Y:.2f} "
             f"L {CX + BODY_HW:.2f},{SHOULDER_Y:.2f} "
             f"L {CX + BODY_HW:.2f},{BODY_BOT:.2f} "
             f"L {CX - BODY_HW:.2f},{BODY_BOT:.2f} Z")
@@ -150,7 +170,7 @@ def build_svg() -> str:
     add(num(CX, CY + FS_BIG10 * 0.36, TOP_VALUE, FS_BIG10, bold=True))
 
     # 最外一档：头顶 + 底部两角
-    head_mid = (BODY_TOP + CY - RATIO_H * BODY_HW) / 2
+    head_mid = (HEAD_TOP_Y + CY - RATIO_H * BODY_HW) / 2
     add(num(CX, head_mid, V_OUT))
     add(num(CX - 80, BODY_BOT - 10, V_OUT))
     add(num(CX + 80, BODY_BOT - 10, V_OUT))
@@ -166,7 +186,7 @@ def build_svg() -> str:
     add(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="none" '
         f'stroke="#000" stroke-width="{W_BOX}"/>')
     pad = 3.0
-    f_top, f_lh = by + 11, 8.0
+    f_top, f_lh = by + 10.5, 7.5
     for i, name in enumerate(BOX_FIELDS):
         ty = f_top + i * f_lh
         add(f'<text x="{bx+pad}" y="{ty:.2f}" font-family="{FONT_CN}" '
@@ -177,7 +197,7 @@ def build_svg() -> str:
 
     gx0, gx1 = bx + pad, bx + bw - pad
     gy0 = f_top + (len(BOX_FIELDS) - 1) * f_lh + 5
-    rows, cell_h = 2, 8.0
+    rows, cell_h = 2, 7.6
     gy1 = gy0 + rows * cell_h
     cw = (gx1 - gx0) / BOX_COLS
     for i in range(rows + 1):
@@ -207,7 +227,9 @@ def report():
     print("现在：N_RINGS=%d  环带 %.1fmm  分值 %d~%d  环心环直径 %.1fmm"
           % (N_RINGS, A_STEP, TOP_VALUE, V_OUT, 2 * A_STEP))
     print("  靶面 %.0f x %.0fmm，环心 y=%.0f，最外环线竖半高 %.1f"
-          % (2 * BODY_HW, BODY_BOT - BODY_TOP, CY, RATIO_H * BODY_HW))
+          % (2 * BODY_HW, BODY_BOT - HEAD_TOP_Y, CY, RATIO_H * BODY_HW))
+    print("  头部最宽 %.1fmm（y=%.1f），底角 %.1fmm，肩线 %.0f°，竖边从 y=%.1f 起"
+          % (2 * HEAD_HW, HEAD_WIDE_Y, 2 * HEAD_BASE_HW, SHOULDER_DEG, SHOULDER_Y))
     for k in range(1, N_RINGS):
         a, c, h = contour(k)
         print("    环线%d 外沿  宽 %.1f 高 %.1f mm" % (k, 2 * a, 2 * (c + h)))
