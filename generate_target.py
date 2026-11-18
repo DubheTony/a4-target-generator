@@ -131,10 +131,10 @@ def silhouette_path():
             f"L {CX - BODY_HW:.2f},{BODY_BOT:.2f} Z")
 
 
-def num(x, y, txt, size=FS_RINGNO, bold=False):
+def num(x, y, txt, size=FS_RINGNO, bold=False, fill="#fff"):
     b = ' font-weight="bold"' if bold else ''
     return (f'<text x="{x:.2f}" y="{y:.2f}"{b} font-family="{FONT_NUM}" '
-            f'font-size="{size}" text-anchor="middle" fill="#000">{txt}</text>')
+            f'font-size="{size}" text-anchor="middle" fill="{fill}">{txt}</text>')
 
 
 def build_svg() -> str:
@@ -148,14 +148,17 @@ def build_svg() -> str:
         f'stroke-width="{W_FRAME}"/>')
 
     body = silhouette_path()
-    add(f'<path d="{body}" fill="none" stroke="#000" '
+    add(f'<path d="{body}" fill="#000" stroke="#fff" '
         f'stroke-width="{W_SIL}" stroke-linejoin="miter"/>')
     add(f'<defs><clipPath id="body"><path d="{body}"/></clipPath></defs>')
     add('<g clip-path="url(#body)">')
 
-    # 环线 N-1 条
+    # 10 环内为白底黑字，其余靶面为黑底白字
+    add(f'<path d="{ring_path(*contour(1))}" fill="#fff"/>')
+
+    # 环线 N-1 条，白色分隔线
     for k in range(1, N_RINGS):
-        add(f'<path d="{ring_path(*contour(k))}" fill="none" stroke="#000" '
+        add(f'<path d="{ring_path(*contour(k))}" fill="none" stroke="#fff" '
             f'stroke-width="{W_RING}"/>')
 
     # 中间各档环号：十字排（水平一排 + 竖直一排），左右/上下对称
@@ -167,7 +170,7 @@ def build_svg() -> str:
             add(num(CX, CY + sx * dy + FS_RINGNO * 0.36, v))
 
     # 环心
-    add(num(CX, CY + FS_BIG10 * 0.36, TOP_VALUE, FS_BIG10, bold=True))
+    add(num(CX, CY + FS_BIG10 * 0.36, TOP_VALUE, FS_BIG10, bold=True, fill="#000"))
 
     # 最外一档：头顶 + 底部两角
     head_mid = (HEAD_TOP_Y + CY - RATIO_H * BODY_HW) / 2

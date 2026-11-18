@@ -1,29 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="210.0mm" height="297.0mm" viewBox="0 0 210.0 297.0">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <rect x="5.0" y="5.0" width="200.0" height="287.0" fill="none" stroke="#000" stroke-width="0.8"/>
-<path d="M 10.00,106.14 L 64.80,77.00 L 62.20,54.60 L 67.70,18.30 Q 105.00,-4.30 142.30,18.30 L 147.80,54.60 L 145.20,77.00 L 200.00,106.14 L 200.00,288.00 L 10.00,288.00 Z" fill="none" stroke="#000" stroke-width="1.2" stroke-linejoin="miter"/>
+<path d="M 10.00,106.14 L 64.80,77.00 L 62.20,54.60 L 67.70,18.30 Q 105.00,-4.30 142.30,18.30 L 147.80,54.60 L 145.20,77.00 L 200.00,106.14 L 200.00,288.00 L 10.00,288.00 Z" fill="#000" stroke="#fff" stroke-width="1.2" stroke-linejoin="miter"/>
 <defs><clipPath id="body"><path d="M 10.00,106.14 L 64.80,77.00 L 62.20,54.60 L 67.70,18.30 Q 105.00,-4.30 142.30,18.30 L 147.80,54.60 L 145.20,77.00 L 200.00,106.14 L 200.00,288.00 L 10.00,288.00 Z"/></clipPath></defs>
 <g clip-path="url(#body)">
-<path d="M 128.75,144.19 L 128.75,179.81 A 23.75,15.68 0 0 1 81.25,179.81 L 81.25,144.19 A 23.75,15.68 0 0 1 128.75,144.19 Z" fill="none" stroke="#000" stroke-width="0.4"/>
-<path d="M 152.50,126.38 L 152.50,197.62 A 47.50,31.35 0 0 1 57.50,197.62 L 57.50,126.38 A 47.50,31.35 0 0 1 152.50,126.38 Z" fill="none" stroke="#000" stroke-width="0.4"/>
-<path d="M 176.25,108.56 L 176.25,215.44 A 71.25,47.03 0 0 1 33.75,215.44 L 33.75,108.56 A 71.25,47.03 0 0 1 176.25,108.56 Z" fill="none" stroke="#000" stroke-width="0.4"/>
-<path d="M 200.00,90.75 L 200.00,233.25 A 95.00,62.70 0 0 1 10.00,233.25 L 10.00,90.75 A 95.00,62.70 0 0 1 200.00,90.75 Z" fill="none" stroke="#000" stroke-width="0.4"/>
-<text x="69.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
-<text x="105.00" y="113.39" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
-<text x="140.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
-<text x="105.00" y="213.85" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">9</text>
-<text x="45.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
-<text x="105.00" y="79.90" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
-<text x="164.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
-<text x="105.00" y="247.34" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">8</text>
-<text x="21.88" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
-<text x="105.00" y="46.41" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
-<text x="188.12" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
-<text x="105.00" y="280.83" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">7</text>
+<path d="M 128.75,144.19 L 128.75,179.81 A 23.75,15.68 0 0 1 81.25,179.81 L 81.25,144.19 A 23.75,15.68 0 0 1 128.75,144.19 Z" fill="#fff"/>
+<path d="M 128.75,144.19 L 128.75,179.81 A 23.75,15.68 0 0 1 81.25,179.81 L 81.25,144.19 A 23.75,15.68 0 0 1 128.75,144.19 Z" fill="none" stroke="#fff" stroke-width="0.4"/>
+<path d="M 152.50,126.38 L 152.50,197.62 A 47.50,31.35 0 0 1 57.50,197.62 L 57.50,126.38 A 47.50,31.35 0 0 1 152.50,126.38 Z" fill="none" stroke="#fff" stroke-width="0.4"/>
+<path d="M 176.25,108.56 L 176.25,215.44 A 71.25,47.03 0 0 1 33.75,215.44 L 33.75,108.56 A 71.25,47.03 0 0 1 176.25,108.56 Z" fill="none" stroke="#fff" stroke-width="0.4"/>
+<path d="M 200.00,90.75 L 200.00,233.25 A 95.00,62.70 0 0 1 10.00,233.25 L 10.00,90.75 A 95.00,62.70 0 0 1 200.00,90.75 Z" fill="none" stroke="#fff" stroke-width="0.4"/>
+<text x="69.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">9</text>
+<text x="105.00" y="113.39" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">9</text>
+<text x="140.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">9</text>
+<text x="105.00" y="213.85" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">9</text>
+<text x="45.62" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">8</text>
+<text x="105.00" y="79.90" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">8</text>
+<text x="164.38" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">8</text>
+<text x="105.00" y="247.34" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">8</text>
+<text x="21.88" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">7</text>
+<text x="105.00" y="46.41" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">7</text>
+<text x="188.12" y="163.62" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">7</text>
+<text x="105.00" y="280.83" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">7</text>
 <text x="105.00" y="167.40" font-weight="bold" font-family="Arial, Helvetica, sans-serif" font-size="15.0" text-anchor="middle" fill="#000">10</text>
-<text x="105.00" y="17.52" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
-<text x="25.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
-<text x="185.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#000">6</text>
+<text x="105.00" y="17.52" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">6</text>
+<text x="25.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">6</text>
+<text x="185.00" y="278.00" font-family="Arial, Helvetica, sans-serif" font-size="4.5" text-anchor="middle" fill="#fff">6</text>
 </g>
 <text x="36.0" y="48" font-family="Microsoft YaHei, SimHei, sans-serif" font-size="11.0" font-weight="bold" text-anchor="middle" fill="#000" letter-spacing="2">胸环靶</text>
 <rect x="152.0" y="7.0" width="50.0" height="71.5" fill="none" stroke="#000" stroke-width="0.6"/>
